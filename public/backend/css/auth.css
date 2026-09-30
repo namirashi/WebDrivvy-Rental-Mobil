@@ -1,0 +1,335 @@
+/* =========================================================
+   DRIVVY AUTH PAGE
+   Colors:
+   #514ACB - Primary Purple
+   #393788 - Dark Purple
+   #141615 - Dark
+========================================================= */
+
+:root {
+    --drivvy-primary: #514ACB;
+    --drivvy-primary-dark: #393788;
+    --drivvy-dark: #141615;
+    --drivvy-dark-soft: #1c1d22;
+    --drivvy-input: #22242b;
+    --drivvy-border: rgba(255, 255, 255, 0.10);
+    --drivvy-text: #ffffff;
+    --drivvy-muted: #a9a9b8;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body.auth-body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(81, 74, 203, 0.30),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(57, 55, 136, 0.35),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #141615 0%,
+            #18182a 45%,
+            #393788 100%
+        );
+
+    color: var(--drivvy-text);
+}
+
+/* =========================
+   AUTH CONTAINER
+========================= */
+
+.auth-container {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+/* =========================
+   AUTH CARD
+========================= */
+
+.auth-container .card {
+    width: 100%;
+    max-width: 520px;
+
+    background: rgba(20, 22, 21, 0.92) !important;
+
+    border: 1px solid var(--drivvy-border) !important;
+
+    border-radius: 20px !important;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(81, 74, 203, 0.12);
+
+    backdrop-filter: blur(15px);
+}
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.auth-container .card-header {
+    padding: 28px 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(81, 74, 203, 0.95),
+            rgba(57, 55, 136, 0.95)
+        ) !important;
+
+    border: none !important;
+
+    color: white !important;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+/* =========================
+   CARD BODY
+========================= */
+
+.auth-container .card-body {
+    padding: 40px 45px;
+
+    background: transparent;
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.auth-container label {
+    color: #eeeeee !important;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.auth-container .form-control {
+    min-height: 50px;
+
+    padding: 12px 16px;
+
+    background: var(--drivvy-input) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+
+    border-radius: 10px !important;
+
+    color: white !important;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.auth-container .form-control::placeholder {
+    color: #777987;
+}
+
+.auth-container .form-control:focus {
+    background: #262832 !important;
+
+    border-color: var(--drivvy-primary) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(81, 74, 203, 0.20),
+        0 0 20px rgba(81, 74, 203, 0.12) !important;
+
+    outline: none;
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.auth-container .form-check-input {
+    width: 18px;
+    height: 18px;
+
+    background-color: var(--drivvy-input);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    cursor: pointer;
+}
+
+.auth-container .form-check-input:checked {
+    background-color: var(--drivvy-primary);
+
+    border-color: var(--drivvy-primary);
+}
+
+.auth-container .form-check-label {
+    color: #bdbdc9 !important;
+
+    font-weight: 400;
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.auth-container .btn-primary {
+    min-height: 50px;
+
+    padding: 10px 30px;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #514ACB,
+            #393788
+        ) !important;
+
+    color: white !important;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(81, 74, 203, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.auth-container .btn-primary:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 12px 28px rgba(81, 74, 203, 0.45);
+}
+
+.auth-container .btn-primary:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.auth-container a {
+    color: #918cff;
+
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.auth-container a:hover {
+    color: #b0adff;
+}
+
+/* =========================
+   VALIDATION ERROR
+========================= */
+
+.auth-container .invalid-feedback {
+    color: #ff7b8a;
+
+    margin-top: 7px;
+
+    font-size: 13px;
+}
+
+.auth-container .is-invalid {
+    border-color: #ff5d70 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 93, 112, 0.10) !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .auth-container {
+        padding: 30px 15px;
+    }
+
+    .auth-container .card-body {
+        padding: 30px 25px;
+    }
+
+    .auth-container .card-header {
+        padding: 22px 25px;
+
+        font-size: 21px;
+    }
+
+    .auth-container .row {
+        display: block;
+    }
+
+    .auth-container .col-md-4,
+    .auth-container .col-md-6,
+    .auth-container .col-md-8 {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        text-align: left !important;
+    }
+
+    .auth-container .offset-md-4 {
+        margin-left: 0;
+    }
+
+    .auth-container label {
+        display: block;
+
+        margin-bottom: 8px;
+
+        text-align: left !important;
+    }
+
+    .auth-container .btn-link {
+        display: block;
+
+        margin-top: 15px;
+
+        padding-left: 0;
+    }
+}
